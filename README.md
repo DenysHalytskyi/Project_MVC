@@ -24,12 +24,12 @@ o filmie
 
 ## Funkcje
 
-- **Przeglądanie listy filmów:** Wyświetla listę wszystkich filmów w kolekcji.
-- **Dodawanie nowych filmów:** Pozwala na dodanie nowego filmu do kolekcji.
-- **Edytowanie istniejących filmów:** Umożliwia edytowanie informacji o istniejących filmach.
-- **Oznaczanie filmów jako obejrzane:** Możliwość oznaczenia filmu jako obejrzany.
-- **Dodawanie recenzji do filmów:** Pozwala na dodanie recenzji do filmów.
-- **Usuwanie filmów z kolekcji:** Umożliwia usunięcie filmów z kolekcji.
+- **Przeglądanie listy filmów.
+- **Dodawanie nowych filmów.
+- **Edytowanie istniejących filmów.
+- **Oznaczanie filmów jako obejrzane.
+- **Dodawanie recenzji do filmów.
+- **Usuwanie filmów z kolekcji.
 
 ## Technologie
 
