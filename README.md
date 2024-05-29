@@ -9,13 +9,13 @@
 - [Instalacja](#instalacja)
 - [Uruchomienie aplikacji](#uruchomienie-aplikacji)
 
-##Opis projektu
+## Opis projektu
 – Katalog kolekcji filmów
 Projekt polega na utworzeniu aplikacji, która umożliwi użytkownikom przeglądanie i zarządzanie 
 kolekcją swoich ulubionych filmów. Użytkownicy mogą dodawać nowe filmy, oznaczać je jako 
 obejrzane oraz dodawać recenzje.
 
-##Struktura projektu
+## Struktura projektu
 - Model (models): definicja modelu filmu (np. tytuł, reżyser, ocena),
 - Kontroler (controllers): obsługa żądań http, interakcja z modelem i przekazywanie danych do 
 widoku,
