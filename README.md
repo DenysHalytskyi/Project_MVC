@@ -35,7 +35,7 @@ o filmie
 
 - Node.js
 - Express.js
-- EJS (Embedded JavaScript)
+- EJS
 - HTML
 - CSS
 
