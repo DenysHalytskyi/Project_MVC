@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Film Collection</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>My Film Collection</h1>
+    <a class="add-film" href="/add">Add New Film</a>
+  </div>
+  <div class="film-container">
+    <% films.forEach(film => { %>
+      <div class="film-card">
+        <h2><%= film.title %></h2>
+        <p>Director: <%= film.director %></p>
+        <p>Rating: <%= film.rating %></p>
+        <p>Watched: <%= film.watched ? 'Yes' : 'No' %></p>
+        <p>Review: <%= film.review %></p>
+        <a href="/edit/<%= film.id %>">Edit</a>
+        <form action="/delete/<%= film.id %>" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
