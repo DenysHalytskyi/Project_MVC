@@ -1,46 +1,45 @@
 const Film = require('../models/film');
 
-let films = [];
-let currentId = 1;
-
-// Pobierz wszystkie filmy
-exports.getFilms = (req, res) => {
-  res.render('index', { films: films });
+exports.getAllFilms = (req, res) => {
+  res.render('index', { films: Film.getAllFilms() });
 };
 
-// Dodaj nowy film
+exports.getFilmById = (req, res) => {
+  const film = Film.getFilmById(req.params.id);
+  if (film) {
+    res.render('editFilm', { film });
+  } else {
+    res.redirect('/');
+  }
+};
+
 exports.addFilm = (req, res) => {
-  const newFilm = new Film(
-    currentId++,
-    req.body.title,
-    req.body.director,
-    req.body.rating,
-    false,
-    ''
-  );
-  films.push(newFilm);
+  const newFilm = {
+    id: Date.now(), // Unikalny ID
+    title: req.body.title,
+    director: req.body.director,
+    rating: req.body.rating,
+    watched: req.body.watched === 'on',
+    review: req.body.review
+  };
+  Film.addFilm(newFilm);
   res.redirect('/');
 };
 
-// Edytuj film
-exports.editFilm = (req, res) => {
-  const film = films.find(f => f.id == req.params.id);
-  res.render('editFilm', { film: film });
-};
-
-// Zaktualizuj film
 exports.updateFilm = (req, res) => {
-  const film = films.find(f => f.id == req.params.id);
-  film.title = req.body.title;
-  film.director = req.body.director;
-  film.rating = req.body.rating;
-  film.watched = req.body.watched === 'on';
-  film.review = req.body.review;
+  const updatedFilm = {
+    id: parseInt(req.params.id, 10),
+    title: req.body.title,
+    director: req.body.director,
+    rating: req.body.rating,
+    watched: req.body.watched === 'on',
+    review: req.body.review
+  };
+  Film.updateFilm(parseInt(req.params.id, 10), updatedFilm);
   res.redirect('/');
 };
 
-// Usuń film
 exports.deleteFilm = (req, res) => {
-  films = films.filter(f => f.id != req.params.id);
+  Film.deleteFilm(parseInt(req.params.id, 10));
   res.redirect('/');
 };
